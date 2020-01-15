@@ -4,6 +4,9 @@ class SessionsController < ApplicationController
   end
 
   def home
+    if logged_in?
+      redirect_to obten_usuario
+    end
   end
 
   def create
