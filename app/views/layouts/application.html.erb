@@ -8,20 +8,34 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <header>
-    <div class="container">
-      <nav>
-        <ul>
-          <li><%= link_to "Home", home_path %></li>
-          <li><%= link_to "Log In", login_path %></li>
-          <li><%= link_to "Registrate", signup_path %></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
 
   <body>
-    <%= yield %>
+    <header
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <%= link_to "Home", home_path, class: "navbar-brand" %>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <%= link_to "Log In", login_path, class: "nav-link" %>
+                <%= link_to "Registrate", signup_path, class: "nav-link" %>
+              </li>
+            </ul>
+          </div>
+
+
+          <!-- <ul class="nav navbar-nav navbar-right">
+            <li><3%= link_to "Home", home_path %></li>
+            <li><3%= link_to "Log In", login_path %></li>
+            <li><3%= link_to "Registrate", signup_path %></li>
+          </ul> -->
+        </nav>
+    </header>
+    <div class="containers">
+      <%= yield %>
+    </div>
   </body>
 </html>
